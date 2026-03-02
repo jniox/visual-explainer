@@ -4,50 +4,86 @@ Reusable patterns for layout, connectors, theming, and visual effects in self-co
 
 ## Theme Setup
 
-Always define both light and dark palettes via custom properties. Start with whichever fits the chosen aesthetic, ensure both work.
+**Default: ODS Brand theme.** Always use this unless the user requests a different aesthetic. Full documentation in `./ods-brand.md`.
 
 ```css
 :root {
-  --font-body: 'Outfit', system-ui, sans-serif;
-  --font-mono: 'Space Mono', 'SF Mono', Consolas, monospace;
+  --font-heading: 'Sora', system-ui, sans-serif;
+  --font-body: 'DM Sans', 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: 'IBM Plex Mono', 'SF Mono', Consolas, monospace;
 
-  --bg: #f8f9fa;
-  --surface: #ffffff;
-  --surface-elevated: #ffffff;
+  /* ODS Light theme — white + beige warmth */
+  --bg: #FFFFFF;
+  --bg-alt: #F9F6F1;
+  --surface: #FFFFFF;
+  --surface2: #F5F6F7;
+  --surface-elevated: #FFFFFF;
   --border: rgba(0, 0, 0, 0.08);
-  --border-bright: rgba(0, 0, 0, 0.15);
-  --text: #1a1a2e;
-  --text-dim: #6b7280;
-  --accent: #0891b2;
-  --accent-dim: rgba(8, 145, 178, 0.1);
-  /* Semantic accents for diagram elements */
-  --node-a: #0891b2;
-  --node-a-dim: rgba(8, 145, 178, 0.1);
-  --node-b: #059669;
-  --node-b-dim: rgba(5, 150, 105, 0.1);
-  --node-c: #d97706;
-  --node-c-dim: rgba(217, 119, 6, 0.1);
+  --border-bright: #DFE6E9;
+  --text: #2D3436;
+  --text-dim: #636E72;
+  --navy: #1E3A5F;
+  --navy-dim: rgba(30, 58, 95, 0.08);
+  --accent: #FF8C42;
+  --accent-dim: rgba(255, 140, 66, 0.10);
+  --node-a: #1E3A5F;
+  --node-a-dim: rgba(30, 58, 95, 0.08);
+  --node-b: #FF8C42;
+  --node-b-dim: rgba(255, 140, 66, 0.10);
+  --node-c: #00B894;
+  --node-c-dim: rgba(0, 184, 148, 0.10);
+  --success: #00B894;
+  --warning: #FDCB6E;
+  --error: #D63031;
+  --info: #74B9FF;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #0d1117;
-    --surface: #161b22;
-    --surface-elevated: #1c2333;
-    --border: rgba(255, 255, 255, 0.06);
-    --border-bright: rgba(255, 255, 255, 0.12);
-    --text: #e6edf3;
-    --text-dim: #8b949e;
-    --accent: #22d3ee;
-    --accent-dim: rgba(34, 211, 238, 0.12);
-    --node-a: #22d3ee;
-    --node-a-dim: rgba(34, 211, 238, 0.12);
-    --node-b: #34d399;
-    --node-b-dim: rgba(52, 211, 153, 0.12);
-    --node-c: #fbbf24;
-    --node-c-dim: rgba(251, 191, 36, 0.12);
+    --bg: #0F2A47;
+    --bg-alt: #162E4D;
+    --surface: #1E3A5F;
+    --surface2: #162E4D;
+    --surface-elevated: #2A4A74;
+    --border: rgba(255, 255, 255, 0.08);
+    --border-bright: rgba(255, 255, 255, 0.15);
+    --text: #F5F6F7;
+    --text-dim: #B2BEC3;
+    --navy: #74B9FF;
+    --navy-dim: rgba(116, 185, 255, 0.12);
+    --accent: #FFA566;
+    --accent-dim: rgba(255, 165, 102, 0.12);
+    --node-a: #74B9FF;
+    --node-a-dim: rgba(116, 185, 255, 0.12);
+    --node-b: #FFA566;
+    --node-b-dim: rgba(255, 165, 102, 0.12);
+    --node-c: #55EFC4;
+    --node-c-dim: rgba(85, 239, 196, 0.12);
+    --success: #55EFC4;
+    --warning: #FFEAA7;
+    --error: #FF7675;
+    --info: #74B9FF;
   }
 }
+```
+
+For alternate aesthetics, use different palettes (see examples below kept for reference):
+
+```css
+/* Alternate: Teal/Cyan palette (use only when requested) */
+/*
+:root {
+  --font-body: 'Outfit', system-ui, sans-serif;
+  --font-mono: 'Space Mono', 'SF Mono', Consolas, monospace;
+  --bg: #f8f9fa;
+  --surface: #ffffff;
+  --accent: #0891b2;
+  --accent-dim: rgba(8, 145, 178, 0.1);
+  --node-a: #0891b2;
+  --node-b: #059669;
+  --node-c: #d97706;
+}
+*/
 ```
 
 ## Background Atmosphere

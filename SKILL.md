@@ -30,10 +30,13 @@ For prose accents, see "Prose Page Elements" in `./references/css-patterns.md`. 
 
 **What type of content?** Architecture, flowchart, sequence, data flow, schema/ER, state machine, mind map, data table, timeline, dashboard, or prose-first page. Each has distinct layout needs and rendering approaches (see Diagram Types below).
 
-**What aesthetic?** Pick one and commit. The constrained aesthetics (Blueprint, Editorial, Paper/ink) are safer — they have specific requirements that prevent generic output. The flexible ones (IDE-inspired) require more discipline.
+**What aesthetic?** The default is **ODS Brand** — use it unless the user explicitly requests a different aesthetic. For other aesthetics, pick one and commit. The constrained aesthetics are safer — they have specific requirements that prevent generic output. The flexible ones (IDE-inspired) require more discipline.
 
-**Constrained aesthetics (prefer these):**
-- Blueprint (technical drawing feel, subtle grid background, deep slate/blue palette, monospace labels, precise borders) — see `websocket-implementation-plan.html` for reference
+**Default aesthetic:**
+- **ODS Brand** (Navy #1E3A5F + Orange #FF8C42, Sora headings + DM Sans body, beige #F9F6F1 warmth, professional and premium) — **always read `./references/ods-brand.md` before generating.** This is the house style for all output unless overridden.
+
+**Alternate constrained aesthetics (use only when explicitly requested):**
+- Blueprint (technical drawing feel, subtle grid background, deep slate/blue palette, monospace labels, precise borders)
 - Editorial (serif headlines like Instrument Serif or Crimson Pro, generous whitespace, muted earth tones or deep navy + gold)
 - Paper/ink (warm cream `#faf7f5` background, terracotta/sage accents, informal feel)
 - Monochrome terminal (green/amber on near-black, monospace everything, CRT glow optional)
@@ -52,6 +55,7 @@ Vary the choice each time. If the last diagram was dark and technical, make the 
 ### 2. Structure
 
 **Read the reference material** before generating. Don't memorize it — read it each time to absorb the patterns.
+- **Always read `./references/ods-brand.md` first** — it contains the default theme (colors, fonts, Mermaid variables, Chart.js palette)
 - For text-heavy architecture overviews (card content matters more than topology): read `./templates/architecture.html`
 - For flowcharts, sequence diagrams, ER, state machines, mind maps: read `./templates/mermaid-flowchart.html`
 - For data tables, comparisons, audits, feature matrices: read `./templates/data-table.html`
@@ -115,11 +119,12 @@ See `./references/css-patterns.md` for image container styles (hero banners, inl
 
 Apply these principles to every diagram:
 
-**Typography is the diagram.** Pick a distinctive font pairing from the list in `./references/libraries.md`. Every page should use a different pairing from recent generations.
+**Typography is the diagram.** The default font pairing is **Sora (headings) + DM Sans (body) + IBM Plex Mono (code)** — the ODS brand pairing. Read `./references/ods-brand.md` for the exact Google Fonts import. Only use alternative pairings from `./references/libraries.md` when the user requests a different aesthetic.
 
-**Forbidden as `--font-body`:** Inter, Roboto, Arial, Helvetica, system-ui alone. These are AI slop signals.
+**Default pairing (ODS Brand):**
+- Sora + DM Sans + IBM Plex Mono (professional, geometric, premium)
 
-**Good pairings (use these):**
+**Alternate pairings (use only for non-ODS aesthetics):**
 - DM Sans + Fira Code (technical, precise)
 - Instrument Serif + JetBrains Mono (editorial, refined)
 - IBM Plex Sans + IBM Plex Mono (reliable, readable)
@@ -128,16 +133,19 @@ Apply these principles to every diagram:
 
 Load via `<link>` in `<head>`. Include a system font fallback in the `font-family` stack for offline resilience.
 
-**Color tells a story.** Use CSS custom properties for the full palette. Define at minimum: `--bg`, `--surface`, `--border`, `--text`, `--text-dim`, and 3-5 accent colors. Each accent should have a full and a dim variant (for backgrounds). Name variables semantically when possible (`--pipeline-step` not `--blue-3`). Support both themes.
+**Color tells a story.** The default palette is the **ODS Brand** — Navy (#1E3A5F) + Orange (#FF8C42) with beige (#F9F6F1) warmth and semantic functional colors. Read the full palette in `./references/ods-brand.md`. Use CSS custom properties for the full palette. Support both light and dark themes.
 
-**Forbidden accent colors:** `#8b5cf6` `#7c3aed` `#a78bfa` (indigo/violet), `#d946ef` (fuchsia), the cyan-magenta-pink combination. These are Tailwind defaults that signal zero design intent.
+**Default palette (ODS Brand):**
+- Navy + Orange (`#1E3A5F`, `#FF8C42`) — professional, premium — **use by default**
+- Functional: Success #00B894, Warning #FDCB6E, Error #D63031, Info #74B9FF
 
-**Good accent palettes (use these):**
+**Alternate accent palettes (for non-ODS aesthetics only):**
 - Terracotta + sage (`#c2410c`, `#65a30d`) — warm, earthy
 - Teal + slate (`#0891b2`, `#0369a1`) — technical, precise
 - Rose + cranberry (`#be123c`, `#881337`) — editorial, refined
 - Amber + emerald (`#d97706`, `#059669`) — data-focused
-- Deep blue + gold (`#1e3a5f`, `#d4a73a`) — premium, sophisticated
+
+**Forbidden accent colors:** `#8b5cf6` `#7c3aed` `#a78bfa` (indigo/violet), `#d946ef` (fuchsia), the cyan-magenta-pink combination. These are Tailwind defaults that signal zero design intent.
 
 Put your primary aesthetic in `:root` and the alternate in the media query:
 

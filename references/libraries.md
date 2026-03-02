@@ -509,7 +509,26 @@ Define as CSS variables for easy reference:
 }
 ```
 
-**Font pairings** (rotate — never use the same pairing twice in a row):
+**Default font pairing (ODS Brand):**
+
+| Headings | Body | Mono / Labels | Feel | Use for |
+|---|---|---|---|---|
+| **Sora** | **DM Sans** | **IBM Plex Mono** | Professional, geometric, premium | **All output by default** |
+
+```html
+<!-- ODS Brand fonts — default import -->
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&family=DM+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+```
+
+```css
+:root {
+  --font-heading: 'Sora', system-ui, sans-serif;
+  --font-body: 'DM Sans', 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: 'IBM Plex Mono', 'SF Mono', Consolas, monospace;
+}
+```
+
+**Alternate font pairings** (use only when the user requests a non-ODS aesthetic):
 
 | Body / Headings | Mono / Labels | Feel | Use for |
 |---|---|---|---|
@@ -519,7 +538,6 @@ Define as CSS variables for easy reference:
 | Bricolage Grotesque | Fragment Mono | Bold, characterful | Data tables, dashboards |
 | Plus Jakarta Sans | Azeret Mono | Rounded, approachable | Status reports, audits |
 | Outfit | Space Mono | Clean geometric, modern | Flowcharts, pipelines |
-| Sora | IBM Plex Mono | Technical, precise | ER diagrams, schemas |
 | Crimson Pro | Noto Sans Mono | Scholarly, serious | RFC reviews, specs |
 | Fraunces | Source Code Pro | Warm, distinctive | Project recaps |
 | Geist | Geist Mono | Vercel-inspired, sharp | Modern API docs |
@@ -527,7 +545,7 @@ Define as CSS variables for easy reference:
 | Libre Franklin | Inconsolata | Classic, reliable | Data-dense tables |
 | Playfair Display | Roboto Mono | Elegant contrast | Executive summaries |
 
-The first 5 pairings are recommended for most use cases. Vary across consecutive diagrams.
+The alternate pairings should only be used when explicitly departing from the ODS brand.
 
 ### Typography by Content Voice
 

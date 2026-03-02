@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Architecture Diagram — Reference Template</title>
+<title>Architecture Diagram — ODS Brand Template</title>
 <!--
   Reference template for the visual-explainer skill: CSS Grid architecture layout.
-  Warm terracotta/sage palette — distinctly different from the teal (mermaid)
-  and rose (data-table) templates so agents absorb variety, not a single palette.
+  ODS Brand palette — Navy #1E3A5F + Orange #FF8C42 + Beige #F9F6F1.
   Key patterns demonstrated:
-  - Warm non-default palette (terracotta + sage, NOT indigo/violet)
+  - ODS brand palette (navy + orange, NOT indigo/violet)
+  - Sora headings + DM Sans body + IBM Plex Mono
   - Depth tiers: hero (input sources), default (mid sections), recessed (callout)
-  - Asymmetric background atmosphere (off-center gradient mesh)
+  - Asymmetric background atmosphere (navy + orange gradient mesh)
   - Large heading (38px) for typographic contrast
   - Section cards with colored accent borders and dot labels
   - Vertical flow arrows between sections (inline SVG)
@@ -23,58 +23,65 @@
 -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&family=DM+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  /* ============ THEME ============ */
+  /* ============ THEME — ODS BRAND ============ */
   :root {
-    --font-body: 'IBM Plex Sans', system-ui, sans-serif;
+    --font-heading: 'Sora', system-ui, sans-serif;
+    --font-body: 'DM Sans', 'Helvetica Neue', Arial, sans-serif;
     --font-mono: 'IBM Plex Mono', 'SF Mono', Consolas, monospace;
 
-    /* Light theme — warm terracotta + sage palette */
-    --bg: #faf7f5;
-    --surface: #ffffff;
-    --surface2: #f5f0ec;
-    --surface-elevated: #fff9f5;
+    /* Light theme — ODS Navy + Orange + Beige */
+    --bg: #FFFFFF;
+    --bg-alt: #F9F6F1;
+    --surface: #FFFFFF;
+    --surface2: #F5F6F7;
+    --surface-elevated: #FFFFFF;
     --border: rgba(0, 0, 0, 0.07);
-    --border-bright: rgba(0, 0, 0, 0.14);
-    --text: #292017;
-    --text-dim: #8a7e72;
-    --accent: #c2410c;
-    --accent-dim: rgba(194, 65, 12, 0.07);
-    --green: #4d7c0f;
-    --green-dim: rgba(77, 124, 15, 0.07);
-    --orange: #b45309;
-    --orange-dim: rgba(180, 83, 9, 0.07);
-    --sage: #65a30d;
-    --sage-dim: rgba(101, 163, 13, 0.07);
-    --teal: #0f766e;
-    --teal-dim: rgba(15, 118, 110, 0.07);
-    --plum: #9f1239;
-    --plum-dim: rgba(159, 18, 57, 0.07);
+    --border-bright: #DFE6E9;
+    --text: #2D3436;
+    --text-dim: #636E72;
+    --accent: #FF8C42;
+    --accent-dim: rgba(255, 140, 66, 0.08);
+    --navy: #1E3A5F;
+    --navy-dim: rgba(30, 58, 95, 0.08);
+    --green: #00B894;
+    --green-dim: rgba(0, 184, 148, 0.08);
+    --orange: #FF8C42;
+    --orange-dim: rgba(255, 140, 66, 0.08);
+    --sage: #00B894;
+    --sage-dim: rgba(0, 184, 148, 0.08);
+    --teal: #74B9FF;
+    --teal-dim: rgba(116, 185, 255, 0.08);
+    --plum: #D63031;
+    --plum-dim: rgba(214, 48, 49, 0.08);
   }
 
   @media (prefers-color-scheme: dark) {
     :root {
-      --bg: #1a1412;
-      --surface: #231d1a;
-      --surface2: #2e2622;
-      --surface-elevated: #352d28;
-      --border: rgba(255, 255, 255, 0.06);
-      --border-bright: rgba(255, 255, 255, 0.12);
-      --text: #ede5dd;
-      --text-dim: #a69889;
-      --accent: #fb923c;
-      --accent-dim: rgba(251, 146, 60, 0.12);
-      --green: #a3e635;
-      --green-dim: rgba(163, 230, 53, 0.1);
-      --orange: #fbbf24;
-      --orange-dim: rgba(251, 191, 36, 0.1);
-      --sage: #bef264;
-      --sage-dim: rgba(190, 242, 100, 0.1);
-      --teal: #5eead4;
-      --teal-dim: rgba(94, 234, 212, 0.1);
-      --plum: #fda4af;
-      --plum-dim: rgba(253, 164, 175, 0.1);
+      --bg: #0F2A47;
+      --bg-alt: #162E4D;
+      --surface: #1E3A5F;
+      --surface2: #162E4D;
+      --surface-elevated: #2A4A74;
+      --border: rgba(255, 255, 255, 0.08);
+      --border-bright: rgba(255, 255, 255, 0.15);
+      --text: #F5F6F7;
+      --text-dim: #B2BEC3;
+      --accent: #FFA566;
+      --accent-dim: rgba(255, 165, 102, 0.12);
+      --navy: #74B9FF;
+      --navy-dim: rgba(116, 185, 255, 0.12);
+      --green: #55EFC4;
+      --green-dim: rgba(85, 239, 196, 0.12);
+      --orange: #FFA566;
+      --orange-dim: rgba(255, 165, 102, 0.12);
+      --sage: #55EFC4;
+      --sage-dim: rgba(85, 239, 196, 0.12);
+      --teal: #74B9FF;
+      --teal-dim: rgba(116, 185, 255, 0.12);
+      --plum: #FF7675;
+      --plum-dim: rgba(255, 118, 117, 0.12);
     }
   }
 
@@ -84,8 +91,8 @@
   body {
     background: var(--bg);
     background-image:
-      radial-gradient(ellipse at 20% 0%, var(--accent-dim) 0%, transparent 50%),
-      radial-gradient(ellipse at 80% 100%, var(--sage-dim) 0%, transparent 40%);
+      radial-gradient(ellipse at 15% 0%, var(--navy-dim) 0%, transparent 45%),
+      radial-gradient(ellipse at 85% 100%, var(--accent-dim) 0%, transparent 35%);
     color: var(--text);
     font-family: var(--font-body);
     padding: 40px;
@@ -113,11 +120,13 @@
 
   /* ============ TYPOGRAPHY ============ */
   h1 {
+    font-family: var(--font-heading);
     font-size: 38px;
     font-weight: 700;
-    letter-spacing: -1px;
+    letter-spacing: -0.02em;
     margin-bottom: 6px;
     text-wrap: balance;
+    color: var(--navy);
   }
 
   .subtitle {
